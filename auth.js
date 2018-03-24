@@ -62,12 +62,14 @@ function funcionAgregar(titulo){
         }
       }
     })
-     .then(
+      .then(
     function(response) {
       console.log("Response", response);
-      console.log("Agregado");
               },
       function(err) {
       console.error("Execute error", err); });
       }
+     console.log("inicio:" + _inicio);
+    console.log("fin: " + _fin);
+
 }
