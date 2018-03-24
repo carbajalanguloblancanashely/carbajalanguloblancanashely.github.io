@@ -25,12 +25,6 @@ function initClient() {
 
 function handleAuthClick(event) {
         gapi.auth2.getAuthInstance().signIn();
-        if (isSignedIn) {
-          authorizeButton.style.display = 'none';
-          signoutButton.style.display = 'block';
-      console.log("Entre");
-        }
-
       }
 
 function handleSignoutClick(event) {
