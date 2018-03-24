@@ -65,13 +65,9 @@ function funcionAgregar(titulo){
      .then(
     function(response) {
       console.log("Response", response);
-      alert("Agregado Correctamente");
+      console.log("Agregado");
               },
       function(err) {
       console.error("Execute error", err); });
-       alert("Verifique el fomato de la fecha");
       }
-     console.log("inicio:" + _inicio);
-    console.log("fin: " + _fin);
-
 }
