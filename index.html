@@ -1,16 +1,77 @@
 <!DOCTYPE html>
+<html>
   <head>
-    <title>Inicio</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="materialize/css/materialize.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="materialize/css/main.css" />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="search.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"></script>
+    <title>Google APIs</title>
+    </style>
   </head>
-  <body id="fondo" >
-    <h2 id="titulo">BIENVENIDO</h2>
-    <div class="inicio">
-       <a class="menuinicio" href="casovaldemar/critica.html"> <p>LA VERDAD SOBRE EL CASO DEL SEÑOR VALDEMAR</p></a>
-        <a class="menuinicio" href="laformadelascosas/critica.html"><p>LA FORMA DE LAS COSAS</p></a>
-        <img class="inicio" src="recursos/libros.jpg" >
+  <body>
+    <div class="card-panel #4db6ac teal lighten-2">
+      <button  id="authorize-button" class="waves-effect waves-light btn #000000 black" style="margin-left: 45%">Authorize</button>
+        <button id="signout-button" class="waves-effect waves-light btn #000000 black" style="margin-left: 45%">Sign Out</button>
+      </div>
+
+    <div class="row" style="margin-left: 1%">
+      <div class="col s20">
+          <div class="input-field col s3">
+            Buscar en YouTube:
+            <div class="input-field inline">
+              <input id="query">
+            </div>
+          </div>
+          <div class="input-field col s3">
+            Cantidad de Videos:
+            <div class="input-field inline">
+              <input id="cantidad">
+            </div>
+            <button disabled onclick="search()" id="search-button">Aceptar</button>
+          </div>
+          <div class="input-field col s3" id="fecha">
+            Inicio:
+            <div class="input-field inline">
+              <input id="inicio" value='2018-03-26T10:40:00-06:00'>
+            </div>
+          </div>
+          <div class="input-field col s3" id="fecha2">
+            Termino:
+            <div class="input-field inline">
+              <input id="fin" value='2018-03-27T10:40:00-06:00'>
+            </div>
+          </div>
+        </div>
     </div>
+    <div id="div-videos" style="overflow-y:auto;">
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th></th>
+              <th>Video</th>
+              <th>Calendar</th>
+          </tr>
+        </thead>
+        <tbody id="tcuerpo">
+        </tbody>
+      </table>
+    </div>
+
+    <div id=map>
+    </div>
+
+
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+    <script type="text/javascript" src="auth.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLNFueaYp3ERtKrGEl_3MH6RQgsbzrwt4">
+    </script>
   </body>
 </html>
