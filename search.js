@@ -1,23 +1,3 @@
-var dom = (function(){
-    var _crear_elemento = function(str_etiqueta, obj_atributos, obj_propiedades){
-        var nuevo_elemento = document.createElement(str_etiqueta);
-        for(var llave in obj_atributos){
-            nuevo_elemento.setAttribute(llave, obj_atributos[llave]);
-        }
-        for(var llave in obj_propiedades){
-            nuevo_elemento[llave] = obj_propiedades[llave];
-        }
-        return nuevo_elemento;
-    };
-    return{
-        crear_elemento: _crear_elemento
-    }
-}());
-
-
-//-----------------------------------------------------------------------------
-
-
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -69,7 +49,7 @@ function onSearchResponse(response, pageToken) {
 function dibujarMapa(){
     var uluru = {lat: 23.3133202, lng: -111.6576591};
     map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 1,
+      zoom: 2,
       center: uluru
     });
 }
