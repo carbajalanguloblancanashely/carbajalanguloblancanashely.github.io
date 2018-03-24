@@ -22,7 +22,7 @@ function initClient() {
           signoutButton.onclick = handleSignoutClick;
         });
       }
-
+      
 function handleAuthClick(event) {
         gapi.auth2.getAuthInstance().signIn();
       }
@@ -31,9 +31,6 @@ function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
       }
 function funcionAgregar(titulo){
-    document.get
-    //console.log( "id: "+identificador);
-    //console.log(titulo);
     var _inicio = document.getElementById("inicio").value;
     var _fin = document.getElementById("fin").value;
     if (_inicio.value =="" || _fin.value ==""){
