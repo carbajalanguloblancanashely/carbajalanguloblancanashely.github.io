@@ -62,16 +62,14 @@ function funcionAgregar(titulo){
         }
       }
     })
-      .then(
+     .then(
     function(response) {
-
-
+      console.log("Response", response);
       alert("Agregado Correctamente");
-      //Sconsole.log("Response", response);
               },
       function(err) {
-      alert("Verifique que el formato de la fecha sea el correcto \n ejemplo: '2018-03-27T10:40:00-06:00'");
-      //Sconsole.error("Execute error", err); });
+      console.error("Execute error", err); });
+       alert("Verifique el fomato de la fecha");
       }
      console.log("inicio:" + _inicio);
     console.log("fin: " + _fin);
