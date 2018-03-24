@@ -1,3 +1,4 @@
+
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -33,7 +34,6 @@ function search() {
     }
 }
 function onSearchResponse(response, pageToken) {   
-    console.log(response);
     var responseString = JSON.stringify(response.result);
     var responseYoutube = JSON.parse(responseString);
     var responseItems = responseYoutube.items;
@@ -82,15 +82,11 @@ function buscar(_id, nextPageToken) {
   }
 
 function crearMarcadores(latitud, longitud){
-    console.log("length:" + videosLocalizacion.length);
     var uluru = {lat: latitud, lng: longitud};
-    console.log("lat: " + latitud);
-    console.log("lng: " + longitud );
         var marker = new google.maps.Marker({
           position: uluru,
           map: map
         });
-console.log("yes I did it: ");
 }
 
 
@@ -128,7 +124,6 @@ function agregar(_id){
         var _botonAgregar = document.createElement("button");
         _botonAgregar.textContent="Agregar";
         _botonAgregar.id = identificador;
-        console.log("i:"+ i+ "id: "+identificador);
         _botonAgregar.addEventListener("click", function(obj_evento){funcionAgregar(titulo);},false);
         _celda.appendChild(_botonAgregar);
         _fila.appendChild(_celda);
