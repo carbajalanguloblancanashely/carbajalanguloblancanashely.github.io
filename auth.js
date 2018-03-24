@@ -23,20 +23,14 @@ function initClient() {
         });
       }
 
-function updateSigninStatus(isSignedIn) {
+function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
       console.log("Entre");
-        } else {
-          authorizeButton.style.display = 'block';
-          signoutButton.style.display = 'none';
         }
-      }
 
-function handleAuthClick(event) {
-        gapi.auth2.getAuthInstance().signIn();
-        updateSigninStatus();
       }
 
 function handleSignoutClick(event) {
