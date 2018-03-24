@@ -1,0 +1,25 @@
+#div-videos{
+	float:left;
+	margin-left: 1%;
+	margin-right: 2%;
+	height: 400px;
+    width: 48%;
+}
+
+#map {
+	float: left;;
+    height: 380px;
+    width: 48%;
+
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
+
+#fecha, #fecha2{
+		border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
