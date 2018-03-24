@@ -16,8 +16,8 @@ function initClient() {
           discoveryDocs: DISCOVERY_DOCS,
           scope: SCOPES
         }).then(function () {
-          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          //gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+          //updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
           authorizeButton.onclick = handleAuthClick;
           signoutButton.onclick = handleSignoutClick;
         });
@@ -27,7 +27,6 @@ function updateSigninStatus(isSignedIn) {
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
-          document.getElementById("search-button").disabled= false;
       console.log("Entre");
         } else {
           authorizeButton.style.display = 'block';
@@ -37,14 +36,16 @@ function updateSigninStatus(isSignedIn) {
 
 function handleAuthClick(event) {
         gapi.auth2.getAuthInstance().signIn();
+        updateSigninStatus();
       }
 
 function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
       }
-
-
 function funcionAgregar(titulo){
+    document.get
+    //console.log( "id: "+identificador);
+    //console.log(titulo);
     var _inicio = document.getElementById("inicio").value;
     var _fin = document.getElementById("fin").value;
     if (_inicio.value =="" || _fin.value ==""){
@@ -64,12 +65,12 @@ function funcionAgregar(titulo){
     })
       .then(
     function(response) {
-      console.log("Response", response);
+      alert("agregado con exito");
+      console.log("SI");
               },
       function(err) {
+      console.log("No"); 
       console.error("Execute error", err); });
       }
-     console.log("inicio:" + _inicio);
-    console.log("fin: " + _fin);
 
 }
